@@ -1,3 +1,5 @@
+// Pagina di benvenuto e punto di ingresso dell’app
+
 import Image from "next/image";
 import LeagueSelector from "./components/LeagueSelector";
 

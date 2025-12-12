@@ -1,3 +1,5 @@
+// Pagina che carica i dati del campionato selezionato
+
 import MatchList from "@/app/components/MatchList";
 import LeagueTable from "@/app/components/LeagueTable";
 

@@ -1,3 +1,5 @@
+// Mostra la classifica aggiornata in base ai risultati.
+
 import styles from "./LeagueTable.module.css";
 
 export default function LeagueTable({ matches }) {
@@ -66,7 +68,6 @@ export default function LeagueTable({ matches }) {
   });
 
   return (
-    <>
     <div className={styles.tableContainer}>
       <h2 className={styles.title}>Classifica Serie A</h2>
 
@@ -106,8 +107,5 @@ export default function LeagueTable({ matches }) {
         </tbody>
       </table>
     </div>
-    
-    <div className={styles["italy-flag"]}></div>
-    </>
   );
 }

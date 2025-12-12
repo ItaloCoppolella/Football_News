@@ -1,0 +1,127 @@
+/* app/components/MatchList.module.css */
+
+.container {
+  margin-top: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 16px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.title {
+  color: #024494;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.filterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-weight: 600;
+  color: #2c5282;
+  font-size: 0.95rem;
+}
+
+.select {
+  padding: 8px 12px;
+  border: 2px solid #024494;
+  border-radius: 8px;
+  background-color: white;
+  color: #1a202c;
+  font-size: 0.95rem;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  min-width: 200px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.select:focus {
+  border-color: #008fd7;
+  box-shadow: 0 0 0 3px rgba(2, 68, 148, 0.2);
+}
+
+.roundHeader {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c5282;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roundBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: #3182ce;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(49, 130, 206, 0.3);
+}
+
+.matchCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  margin: 10px auto;
+}
+
+.matchCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team {
+  flex: 1;
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.teamLeft {
+  text-align: left;
+}
+
+.teamRight {
+  text-align: right;
+}
+
+.score {
+  width: 80px;
+  text-align: center;
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.pending {
+  font-size: 0.9rem;
+  color: #e53e3e;
+}   

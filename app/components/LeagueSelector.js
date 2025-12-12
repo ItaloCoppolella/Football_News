@@ -1,3 +1,5 @@
+// Permette all’utente di scegliere un campionato.
+
 import Link from "next/link";
 
 export default function LeagueSelector() {

@@ -1,55 +1,92 @@
-// Componente che mostra le partite
+// Mostra le partite organizzate per giornata
+
+"use client"
+
+import styles from './MatchList.module.css';
+import { useState, useEffect } from 'react';
 
 export default function MatchList({ matches }) {
+  const [selectedRound, setSelectedRound] = useState('all');
+  const [rounds, setRounds] = useState([]);
+
+  useEffect(() => {
+    if (!matches || !Array.isArray(matches)) return;
+
+    const uniqueRounds = [...new Set(matches.map(m => m.round).filter(Boolean))];
+    setRounds(['all', ...uniqueRounds.sort((a, b) => {
+      const numA = parseInt(a.replace(/\D/g, ''));
+      const numB = parseInt(b.replace(/\D/g, ''));
+      return numA - numB;
+    })]);
+  }, [matches]);
+
   if (!matches || !Array.isArray(matches)) {
     return <p>Caricamento partite...</p>;
   }
 
-  //  Raggruppiamo le partite per "round" (Matchday)
-  const grouped = {};
+  const filteredMatches = selectedRound === 'all'
+    ? matches
+    : matches.filter(m => m.round === selectedRound);
 
-  matches.forEach((match) => {
-    if (!grouped[match.round]) {
-      grouped[match.round] = [];
-    }
-    grouped[match.round].push(match);
-  });
-
-  const rounds = Object.entries(grouped); // [["Matchday 1", [...matches]], ...]
-
+  const grouped = filteredMatches.reduce((acc, match) => {
+    const round = match.round || 'Non classificata';
+    if (!acc[round]) acc[round] = [];
+    acc[round].push(match);
+    return acc;
+  }, {});
 
   return (
-    <div style={{ marginTop: "20px" }}>
-      <h2>Partite</h2>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Partite</h2>
 
-      {rounds.map(([roundName, roundMatches]) => (
-        <div key={roundName} style={{ marginBottom: "20px" }}>
-          <h3>{roundName}</h3>
-
-          {roundMatches.map((match, index) => (
-            <div
-              key={index}
-              style={{
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "8px",
-                marginBottom: "10px",
-              }}
-            >
-              <p>
-                <strong>{match.team1}</strong> vs{" "}
-                <strong>{match.team2}</strong>
-              </p>
-
-              {match.score?.ft ? (
-                <p>Risultato: {match.score.ft[0]} - {match.score.ft[1]}</p>
-              ) : (
-                <p>Da giocare</p>
-              )}
-            </div>
+      {/* Dropdown filtro giornata */}
+      <div className={styles.filterContainer}>
+        <label htmlFor="roundFilter" className={styles.label}>
+          Giornata:
+        </label>
+        <select
+          id="roundFilter"
+          className={styles.select}
+          value={selectedRound}
+          onChange={(e) => setSelectedRound(e.target.value)}
+        >
+          {rounds.map((round) => (
+            <option key={round} value={round}>
+              {round === 'all' ? 'Tutte le giornate' : round}
+            </option>
           ))}
+        </select>
+      </div>
+
+      {/* Partite raggruppate */}
+      {Object.entries(grouped).map(([roundName, roundMatches]) => (
+        <div key={roundName} className={styles.roundSection}>
+          <h3 className={styles.roundHeader}>
+            <span className={styles.roundBadge}>{roundName}</span>
+          </h3>
+          <div className={styles.matchesList}>
+            {roundMatches.map((match, index) => (
+              <div key={index} className={styles.matchCard}>
+                <div className={`${styles.team} ${styles.teamLeft}`}>
+                  {match.team1}
+                </div>
+                <div className={styles.score}>
+                  {match.score?.ft ? (
+                    <>
+                      {match.score.ft[0]} - {match.score.ft[1]}
+                    </>
+                  ) : (
+                    <span className={styles.pending}>Da giocare</span>
+                  )}
+                </div>
+                <div className={`${styles.team} ${styles.teamRight}`}>
+                  {match.team2}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       ))}
     </div>
   );
-}
+}   
