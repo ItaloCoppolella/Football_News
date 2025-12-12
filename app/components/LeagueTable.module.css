@@ -1,0 +1,144 @@
+/* components/LeagueTable.module.css */
+
+.tableContainer {
+  margin-top: 40px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #024494, #008fd7);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(2, 68, 148, 0.25);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: none;
+}   
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color: #f7fafc;
+  padding: 16px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.theadRow {
+  background: linear-gradient(135deg, #2c5282, #2a4365);
+  color: #e2e8f0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.theadCell {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.firstHeadCell {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.lastHeadCell {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.tbodyRow {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tbodyRow:hover {
+  background-color: #ebf8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tbodyRow:nth-child(even) {
+  background-color: #f8f9fc;
+}
+
+.cell {
+  padding: 14px 16px;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.cellBold {
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.cellWin {
+  color: #2f855a;
+  font-weight: 600;
+}
+
+.cellDraw {
+  color: #975a16;
+  font-weight: 600;
+}
+
+.cellLost {
+  color: #c53030;
+  font-weight: 600;
+}
+
+.cell:first-child {
+  border-left: 4px solid #bee3f8;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.cell:last-child {
+  border-right: 4px solid #bee3f8;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}   
+
+.tbodyRow:first-of-type {
+  background: linear-gradient(0deg, rgba(255,215,0,0.1), rgba(255,215,0,0.1));
+}
+
+
+.tbodyRow:nth-of-type(n+2):nth-of-type(-n+4) {
+  background: linear-gradient(0deg, rgba(0, 120, 210, 0.08), rgba(0, 120, 210, 0.08));
+}
+
+/* Colora leggermente di rosso le ultime 3 */
+.tbodyRow:nth-last-of-type(-n+3) {
+  background: linear-gradient(0deg, rgba(220, 20, 60, 0.1), rgba(220, 20, 60, 0.1));
+}
+
+/* .capo {
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+} */
+
+.italy-flag {
+  background: linear-gradient(to right, green 33%, white 33%, white 66%, red 66%);
+  width: 300px;
+  height: 300px;
+} 
+
+.italy-flag:hover {
+  background-color: yellow;
+}
