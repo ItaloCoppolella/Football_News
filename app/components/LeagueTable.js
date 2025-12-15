@@ -1,4 +1,5 @@
 // Mostra la classifica aggiornata in base ai risultati.
+/* app/components/LeagueTable.js */
 
 import styles from "./LeagueTable.module.css";
 

@@ -1,4 +1,6 @@
 // Permette all’utente di scegliere un campionato.
+/* app/components/LeagueSelector.js */
+
 
 import Link from "next/link";
 import styles from "./LeagueSelector.module.css";
