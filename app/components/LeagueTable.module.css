@@ -127,8 +127,3 @@
 .tbodyRow:nth-last-of-type(-n+3) {
   background: linear-gradient(0deg, rgba(220, 20, 60, 0.1), rgba(220, 20, 60, 0.1));
 }
-
-/* .capo {
-  font-weight: 700;
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-} */
