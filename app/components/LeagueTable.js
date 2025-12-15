@@ -28,7 +28,8 @@ export default function LeagueTable({ matches }) {
   matches.forEach((match) => {
     const { team1, team2, score } = match;
 
-    if (!score?.ft) return;
+    // if (!score?.ft) return;
+    if (!Array.isArray(score?.ft)) return;
 
     const [g1, g2] = score.ft;
 
