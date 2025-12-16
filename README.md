@@ -10,3 +10,16 @@ L’app consente di:
 I dati provengono da JSON open source e l’interfaccia è pensata per essere semplice, moderna e intuitiva, con una navigazione fluida tra le diverse viste.
 
 Il progetto è stato realizzato come progetto finale per consolidare le basi di React, Next.js, gestione dello stato e componentizzazione.
+
+Struttura web app:
+
+page.js           → fetch server-side
+LeagueView.js     → stato, navbar, view
+Navbar.js         → navigazione
+MatchList.js      → partite
+LeagueTable.js    → classifica
+
+## Wireframe
+
+### Home – Selezione campionato
+![Wireframe Home](docs/wireframes.png)
