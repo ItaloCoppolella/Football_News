@@ -127,3 +127,23 @@
 .tbodyRow:nth-last-of-type(-n+3) {
   background: linear-gradient(0deg, rgba(220, 20, 60, 0.1), rgba(220, 20, 60, 0.1));
 }
+
+/* Media query per schermi molto piccoli, riducendo padding e dimensioni */
+
+@media (max-width: 480px) {
+  .tableWrapper {
+    padding: 0 8px;
+  }
+
+  .theadCell,
+  .cell {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    padding: 10px 0;
+    margin-bottom: 16px;
+  }
+}   
