@@ -4,9 +4,8 @@ Calcio Info Viewer è una web app sviluppata con Next.js che permette di consult
 
 L’app consente di:
 
-visualizzare l’ultima giornata disputata (calcolata dinamicamente in base ai risultati disponibili)
-
-consultare la classifica generata automaticamente dai risultati delle partite
+- Visualizzare l’ultima giornata disputata (calcolata dinamicamente in base ai risultati disponibili)
+- Consultare la classifica generata automaticamente dai risultati delle partite
 
 I dati provengono da JSON open source e l’interfaccia è pensata per essere semplice, moderna e intuitiva, con una navigazione fluida tra le diverse viste.
 
